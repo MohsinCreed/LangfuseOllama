@@ -67,6 +67,8 @@ node_modules
 **/.turbo/*
 .yarn
 .turbo
+.vs/
+.vscode/
 
 web/test-results/*
 
