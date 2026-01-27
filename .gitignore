@@ -78,3 +78,19 @@ web/test-results/*
 
 # Refactoring planning files (local only)
 **/.refactor/
+
+# --- LLM / Ollama / Langfuse runtime data ---
+
+# Ollama local data (if someone switches to bind mounts)
+**/.ollama/
+**/ollama-data/
+**/ollama_models/
+
+# Langfuse runtime / local data safety
+**/langfuse-data/
+**/docker-data/
+**/volumes/
+**/data/
+
+# Docker override or local compose files
+docker-compose.override.yml
