@@ -1,4 +1,15 @@
-## Security Policy
-We strongly recommend using the latest version of Langfuse to receive all security updates.
+## Security & Privacy
 
-For more information, please refer to the [Data Security & Privacy](https://langfuse.com/docs/data-security-privacy) page in the documentation or contact security@langfuse.com.
+All data stays local on your machine:
+
+- No external API calls to Langfuse cloud
+- No data transmission to third parties
+- Models and traces stored in local Docker volumes
+- Review `.env.dev.example` for configuration secrets to set
+
+### Setup Security
+
+1. Copy `.env.dev.example` to `.env`
+2. Generate new secrets: `openssl rand -hex 32`
+3. Update ENCRYPTION_KEY and NEXTAUTH_SECRET
+4. **Never commit `.env` file to git**

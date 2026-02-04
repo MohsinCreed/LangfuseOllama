@@ -1,3 +1,13 @@
+# Langfuse + Ollama - License
+
+## Fork Notice
+
+This is a community fork of [Langfuse](https://github.com/langfuse/langfuse) with **Ollama integration for local LLM evaluation**.
+
+The Ollama integration and modifications in this fork are also licensed under the MIT license (same as the original Langfuse project).
+
+---
+
 Copyright (c) 2023-2025 Langfuse GmbH
 
 Portions of this software are licensed as follows:
