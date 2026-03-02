@@ -40,6 +40,12 @@ This starts:
 - PostgreSQL, ClickHouse, Redis, MinIO
 - Ollama (CPU-only by default)
 
+> **Tip:** the `docker-compose.yml` file includes an `ollama` service by default. If you already
+> have Ollama installed natively on your PC and want to use that instead, simply **comment out**
+> the `ollama` service block in `docker-compose.yml` (see example further below) and make sure
+> your native Ollama is running and listening on port `11434`. Only one instance may bind to the
+> port at a time.
+
 ---
 
 ## ACCESS LANGFUSE
@@ -61,6 +67,10 @@ All Langfuse data is stored locally in Docker volumes.
 ## OLLAMA (LOCAL LLM RUNTIME)
 
 Ollama runs inside Docker and exposes an OpenAI-compatible API.
+
+If you're using the container, other services (like Langfuse) can reach it via the hostname
+`http://ollama:11434/v1`. When using a native installation, point at
+`http://host.docker.internal:11434/v1` instead and make sure the Docker service is commented out or stopped.
 
 You can interact with Ollama in TWO ways:
 
@@ -126,6 +136,10 @@ ollama
 
 API Base URL:
 http://ollama:11434/v1
+
+> **Alternative:** if you run into networking issues from within containers, use
+> `http://host.docker.internal:11434/v1` which resolves back to your host.  
+> _(use `http://localhost:11434/v1` when pointing Langfuse at a native Ollama install.)_
 
 Custom models:
 Add model name as in Ollama: For example, gemma3:1b

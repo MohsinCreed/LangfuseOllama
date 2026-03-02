@@ -161,25 +161,26 @@ services:
     volumes:
       - langfuse_postgres_data:/var/lib/postgresql/data
 
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_data:/root/.ollama
-    restart: always
-
-    # --- Optional GPU support (NVIDIA only) ---
-    # Uncomment this section if you have an NVIDIA GPU
-    # and NVIDIA Container Toolkit installed
-    #
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           capabilities: [gpu]
+  # Uncomment this section if you want to run Ollama for local LLM hosting with in a Docker.
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   container_name: ollama
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama_data:/root/.ollama
+  #   restart: always
+  #
+  #   # --- Optional GPU support (NVIDIA only) ---
+  #   # Uncomment this section if you have an NVIDIA GPU
+  #   # and NVIDIA Container Toolkit installed
+  #   #
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - driver: nvidia
+  #             capabilities: [gpu]
 
 volumes:
   langfuse_postgres_data:
